@@ -11,14 +11,14 @@ const sendSimpleError = (res) => {
   res.status(500).json({ message: "Internal error" });
 };
 
-app.get("/jokes", async (req, res) => {
+app.get("/api/jokes", async (req, res) => {
   jokesService
     .getJokes()
     .then((jokes) => res.status(200).json({ jokes }))
     .catch((err) => sendSimpleError(res));
 });
 
-app.post("/vote", async (req, res) => {
+app.post("/api/vote", async (req, res) => {
   const { id, vote } = req.body;
 
   if (!id || Number.isNaN(id) || !["positive", "negative"].includes(vote)) {
