@@ -2,7 +2,7 @@ const { conn } = require("../db.connection");
 
 const getJokes = () => {
   return new Promise((resolve, reject) => {
-    conn.query(`select * from jokes`, (err, results, fields) => {
+    conn.query(`select * from jokes`, (err, results) => {
       if (err) {
         reject(err);
       }
@@ -16,7 +16,7 @@ const jokeExists = (id) => {
   return new Promise((resolve, reject) => {
     conn.query(
       `select count(id) as c from jokes where id=${id}`,
-      (err, results, fields) => {
+      (err, results) => {
         if (err) {
           reject(err);
         }

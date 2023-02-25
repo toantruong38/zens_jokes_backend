@@ -15,7 +15,7 @@ app.get("/api/jokes", async (req, res) => {
   jokesService
     .getJokes()
     .then((jokes) => res.status(200).json({ jokes }))
-    .catch((err) => sendSimpleError(res));
+    .catch(() => sendSimpleError(res));
 });
 
 app.post("/api/vote", async (req, res) => {
