@@ -1,5 +1,5 @@
 const config = {
-  host: "54.95.91.196",
+  host: "54.248.36.183",
   user: "zens_candidate",
   password: "ZensCandy@048",
   database: "zens",
